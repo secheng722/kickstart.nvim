@@ -19,9 +19,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '\\', '<CMD>:sp<CR>', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '|', '<CMD>:vsp<CR>', { desc = 'Split window vertically' })
 
--- Copilot Chat keymaps
+-- -- Copilot Chat keymaps
 vim.keymap.set('n', '<leader>at', '<Cmd>CopilotChatOpen<CR>', { desc = 'Open  Chat' })
-
+--
 -- Quick Chat function
 local function quick_chat(selection_type)
   return function()
@@ -48,7 +48,7 @@ vim.keymap.set('n', '<Leader>e', function()
   if not require('mini.files').close() then
     require('mini.files').open()
   end
-end)
+end, { desc = 'open file exploer' })
 
 -- mini pair
 vim.keymap.set('n', '<leader>tp', function()

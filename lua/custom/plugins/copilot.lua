@@ -18,19 +18,19 @@ return {
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
     dependencies = {
-      { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
-      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+      {
+        'zbirenbaum/copilot.lua',
+      }, -- or zbirenbaum/copilot.lua
+      {
+        'nvim-lua/plenary.nvim',
+        branch = 'master',
+      }, -- for curl, log and async functions
     },
+    build = 'make tiktoken', -- Only on MacOS or Linux
     opts = {
-      window = {
-        layout = 'float',
-        width = 74, -- absolute width in columns
-        height = vim.o.lines - 4, -- absolute height in rows, subtract for command line and status line
-        row = 1, -- row position of the window, starting from the top
-        col = vim.o.columns - 74, -- column position of the window, aligned to the right
-      },
+      -- See Configuration section for options
     },
+    -- See Commands section for default commands if you want to lazy load on them
   },
 }
